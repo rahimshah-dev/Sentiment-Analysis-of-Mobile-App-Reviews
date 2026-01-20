@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+
+# Reports (exclude from git)
+*REPORT*.pdf
