@@ -18,21 +18,34 @@ predictions through a simple UI and JSON API.
 - `app.py` - Flask app and model training logic
 - `CHATGPT.csv` - Training data (required)
 - `templates/index.html` - UI
-- `static/` - Front-end assets
+- `public/` - Front-end assets (served by Vercel CDN)
 - `NLP_PROJECT.ipynb` - Exploration notebook
+- `requirements.txt` - Python dependencies
 
 ## Setup
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install flask pandas numpy scikit-learn
+pip install -r requirements.txt
 ```
 
 ## Run
 ```bash
+vercel dev
+```
+Then open `http://localhost:3000`.
+
+If you only need the API locally (no static assets), you can still use:
+```bash
 python app.py
 ```
 Then open `http://127.0.0.1:5000`.
+
+## Deploy (Vercel)
+```bash
+vercel
+```
+Follow the prompts. Vercel will detect the Flask app in `app.py`, install from `requirements.txt`, and serve assets from `public/`.
 
 ## API
 `POST /predict`

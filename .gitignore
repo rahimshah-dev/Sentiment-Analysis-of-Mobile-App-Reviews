@@ -11,6 +11,7 @@ venv/
 
 # OS/editor
 .DS_Store
+.vercel/
 
 # Reports (exclude from git)
 *REPORT*.pdf
